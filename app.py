@@ -46,6 +46,7 @@ def index():
         return render_template('index.html', res = res)
     return render_template('index.html', res = {})
 
+#下载刚转换的excel文件
 @app.route('/download/<filename>',methods=['GET'])
 def download(filename):
     file_name = urllib.request.unquote(filename, encoding='utf-8', errors='replace')
@@ -56,6 +57,7 @@ def download(filename):
             return send_from_directory(upload_path, file_name, as_attachment=True)
 
 # 删除upload下所有的文件(除__init__.py)
+#删除upload文件夹下生成文件的日期小于当天，则全部删除
 def del_files():
     for file_name in os.listdir(upload_path):
         del_files_path = os.path.join(upload_path, file_name)
