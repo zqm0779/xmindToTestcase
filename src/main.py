@@ -9,6 +9,7 @@
 from lib.readXmind import *
 from  lib.writeExcel import *
 import logging
+#读取xmind数据，转换成excel
 def get_xmind_content(xmind_file,output_file):
     #生成测试用例
     read_xmind = ReadXmindList(xmind_file)

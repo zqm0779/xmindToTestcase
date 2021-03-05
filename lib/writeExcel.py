@@ -10,6 +10,7 @@
 import os,xlwt,datetime
 
 class WriteExcel():
+    #excel设置单元格样式
     style= xlwt.easyxf('pattern: pattern solid, fore_colour 0x31; font: bold on;alignment:HORZ CENTER;'
                          'borders:left 1,right 1,top 1,bottom 1,bottom_colour 0x3A')
     style_nocenter = xlwt.easyxf('pattern: pattern solid, fore_colour White;'
@@ -34,6 +35,7 @@ class WriteExcel():
         初始化excel
         :return:
         """
+        #打开文件
         f = open(self.testcase_filename, 'w')
         f.close()
         wookbook = xlwt.Workbook()  # 创建工作簿
@@ -68,6 +70,7 @@ class WriteExcel():
         初始化测试用例sheet
         :return:
         """
+        #设置excel单元格宽度以及高度
         testcase_wooksheek = self.wookbook.add_sheet('测试用例', cell_overwrite_ok='True')  # 测试用例
         for i in range(12):
             testcase_wooksheek.col(i).width = (15 * 367)
