@@ -2,6 +2,12 @@
 Convert Xmind file to Excel testcases file.
 
 ## usage
+生成requirements.txt文件
+
+pip freeze > requirements.txt
+安装requirements.txt依赖
+
+pip install -r requirements.txt
 
 ```shell
 1、运行 app.py
