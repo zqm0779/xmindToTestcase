@@ -21,6 +21,7 @@ setup(
     author='snailgirl',
     #author_email='test@sina.com',
     description='',
+    #安装第三方库
     install_requires=[
         'xmindparser',
         "xlwt"
